@@ -2,7 +2,11 @@
 
 set -ouex pipefail
 
-dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+uname -r
+
+rpm-ostree --help
+
+#dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Config files
 #curl -s https://raw.githubusercontent.com/Emblem-66/ServerBlue/refs/heads/main/ConfigFiles.sh | bash
