@@ -18,6 +18,7 @@ rm /etc/yum.repos.d/tailscale.repo
 
 # SSH
 #systemctl enable sshd
+systemctl status sshd
 
 # COPR repo add
 #curl -sSL https://raw.githubusercontent.com/emblem-66/ServerBlue/refs/heads/main/dnf-copr.list | xargs -r dnf copr enable -y
