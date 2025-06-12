@@ -15,13 +15,13 @@ rpm-ostree --help
 #curl -sSL https://raw.githubusercontent.com/emblem-66/ServerBlue/refs/heads/main/dnf-repo.list | xargs -r dnf config-manager addrepo
 
 # Tailscale
-dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-dnf install -y tailscale
-systemctl enable tailscaled
-rm /etc/yum.repos.d/tailscale.repo
+#dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+#dnf install -y tailscale
+#systemctl enable tailscaled
+#rm /etc/yum.repos.d/tailscale.repo
 
 # SSH
-systemctl enable sshd
+#systemctl enable sshd
 
 # COPR repo add
 #curl -sSL https://raw.githubusercontent.com/emblem-66/ServerBlue/refs/heads/main/dnf-copr.list | xargs -r dnf copr enable -y
