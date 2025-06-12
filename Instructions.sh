@@ -13,12 +13,12 @@ dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-
 # Tailscale
 dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf install -y tailscale
-systemctl enable tailscaled
+#systemctl enable tailscaled
 rm /etc/yum.repos.d/tailscale.repo
 
 # SSH
-#systemctl enable sshd
-systemctl status sshd
+systemctl enable sshd.service
+systemctl enable tailscaled.service
 
 # COPR repo add
 #curl -sSL https://raw.githubusercontent.com/emblem-66/ServerBlue/refs/heads/main/dnf-copr.list | xargs -r dnf copr enable -y
