@@ -13,12 +13,15 @@ dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-
 # Tailscale
 dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf install -y tailscale
-#systemctl enable tailscaled
+systemctl enable tailscaled.service
 rm /etc/yum.repos.d/tailscale.repo
 
 # SSH
 systemctl enable sshd.service
-systemctl enable tailscaled.service
+
+# Cockpit
+dnf install -y cockpit cockpit-machines cockpit-podman cockpit-files cockpit-navigator cockpit-selinux
+systemctl enable cockpit.socket
 
 # COPR repo add
 #curl -sSL https://raw.githubusercontent.com/emblem-66/ServerBlue/refs/heads/main/dnf-copr.list | xargs -r dnf copr enable -y
@@ -34,4 +37,5 @@ systemctl enable tailscaled.service
 
 # COPR repo remove
 #curl -sSL https://raw.githubusercontent.com/emblem-66/ServerBlue/refs/heads/main/dnf-copr.list | xargs -r dnf copr remove -y
+
 
