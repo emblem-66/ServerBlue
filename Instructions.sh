@@ -19,6 +19,11 @@ rm /etc/yum.repos.d/tailscale.repo
 # SSH
 systemctl enable sshd.service
 
+# libvirt
+
+dnf install -y libvirt
+systemctl enable libvirtd
+
 # Cockpit
 dnf install -y cockpit cockpit-machines cockpit-podman cockpit-files cockpit-navigator cockpit-selinux
 systemctl enable cockpit.socket
