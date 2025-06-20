@@ -2,6 +2,8 @@
 
 set -ouex pipefail
 
+rpm -qa | sort
+
 # remove gnome
 #dnf remove -y gnome*
 
