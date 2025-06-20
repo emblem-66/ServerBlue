@@ -4,7 +4,7 @@ set -ouex pipefail
 
 rpm -qa | sort
 
-dnf install -y dnf-plugins-core
+#dnf install -y dnf-plugins-core
 
 # remove gnome
 #dnf remove -y gnome*
@@ -19,18 +19,18 @@ dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-
 #curl -sSL https://raw.githubusercontent.com/emblem-66/ServerBlue/refs/heads/main/dnf-repo.list | xargs -r dnf config-manager addrepo
 
 # Tailscale
-#dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 
-cat << EOF > /etc/yum.repos.d/tailscale.repo
-[tailscale-stable]
-name=Tailscale stable
-baseurl=https://pkgs.tailscale.com/stable/fedora/$basearch
-enabled=1
-type=rpm
-repo_gpgcheck=1
-gpgcheck=1
-gpgkey=https://pkgs.tailscale.com/stable/fedora/repo.gpg
-EOF
+#cat << EOF > /etc/yum.repos.d/tailscale.repo
+#[tailscale-stable]
+#name=Tailscale stable
+#baseurl=https://pkgs.tailscale.com/stable/fedora/$basearch
+#enabled=1
+#type=rpm
+#repo_gpgcheck=1
+#gpgcheck=1
+#gpgkey=https://pkgs.tailscale.com/stable/fedora/repo.gpg
+#EOF
 
 dnf install -y tailscale
 systemctl enable tailscaled.service
