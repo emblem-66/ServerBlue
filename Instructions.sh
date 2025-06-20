@@ -4,6 +4,8 @@ set -ouex pipefail
 
 rpm -qa | sort
 
+dnf install -y dnf-plugins-core
+
 # remove gnome
 #dnf remove -y gnome*
 
